@@ -1,0 +1,11 @@
+<div id="sooner_subscriber">
+  <%= form_for @subscriber, :url => subscribers_path, :remote => true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br />
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.submit "Subscribe" %>
+  <% end %>
+</div>
