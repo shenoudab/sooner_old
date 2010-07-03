@@ -1,18 +1,16 @@
 module Sooner
-
-  # Custom domain for cookies. Not set by default
+  mattr_accessor :name_validations
+  @@name_validations = true
+  
   mattr_accessor :db_store
   @@db_store = true
 
-  # Used to encrypt password. Please generate one with rake secret.
   mattr_accessor :csv_store
   @@csv_store = true
 
-  # The number of times to encrypt password.
   mattr_accessor :csv_file
   @@csv_file = 'subscribers.csv'
 
-  # Address which sends Devise e-mails.
   mattr_accessor :mailer_sender
   @@mailer_sender = nil
 

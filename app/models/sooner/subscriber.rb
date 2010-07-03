@@ -1,8 +1,8 @@
 module Sooner
   class Subscriber < ActiveRecord::Base
-
+    
     validates :email, :presence => true, :uniqueness => true, :email_format => true
-    validates :name, :presence => true, :uniqueness => true
+    validates :name, :presence => true, :uniqueness => true, :if => :should_validate
     
     # writes email addresses to CSV file
     def save_csv
@@ -15,6 +15,9 @@ module Sooner
         self.errors.add_to_base(e.message + " (CSV)")
       end
     end
-    
+
+    def should_validate
+      Sooner.name_validations
+    end
   end
 end

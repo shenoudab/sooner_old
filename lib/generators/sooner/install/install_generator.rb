@@ -1,4 +1,4 @@
-class SoonerInstallGenerator < Rails::Generators::Base
+class InstallGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
 
   desc "Creates a Sooner initializer and migration to your application."
